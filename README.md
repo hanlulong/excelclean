@@ -48,43 +48,43 @@ After installing the package, run
 
 ## Options 
 
-          integrate 
+        integrate 
             integrate all datasets into a single dta file. The default is to save each dta file
             separately using the name of the corresponding excel file.
 
-          pivot 
+        pivot 
             reshape variables from a wide format to a long format. By default, the program
             recogonizes the last word from the formulated variable names as the time indicator.
             The program will detect the variables that need to be reshaped into a long format, e.g.
             Var2000, Var2001, Var2002 -> Var
 
-          droplist(string) 
+        droplist(string) 
             drop redundant variables from the dataset in the data integration process. It
             helps to reduce the file size and processing time. Separate variable names by a space " ".
             e.g., droplist("Var1 Var2 "). Remember to leave a space at the end of the last variable.
 
-          resultdir(string) 
+        resultdir(string) 
             specify the directory where the results are saved. The default is the directory "datadir" 
             where the excel files are stored.
             e.g., resultdir("C:/myresultdir/"). 
             Always use the full path of the directory to aviod possible conflicts.
 
-          extension(string) 
+        extension(string) 
             specify the extension of files to be included. The deault is "xlsx".
             e.g., extension("xls")
 
-          namerange(integer) 
+        namerange(integer) 
             specify the rows that record variables names. The default is the first row.
             e.g., namelines(4) to indicate that the first four rows contain information about variable
             names. Note that the first four lines will be deleted from the dataset after creating the
             variable names.
 
-          namelines(string) 
+        namelines(string) 
             select the rows to formulate variables names. The default is the first row.
             e.g., namelines("1 3") to specify the first and the third rows to be used to formulate
             variable names
 
-          wordfilter(string) 
+        wordfilter(string) 
             specify specific characters to be excluded from variable names.
             e.g., wordfilter("year quarter the"); to exclude the space before any word use
             wordfilter(`"" word1" " word2""')
