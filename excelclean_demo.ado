@@ -33,7 +33,7 @@ capture mkdir "demo_SNL"
 di "Copying Example Files"
 copy "${demo_home}/examples/SNL/A.xlsx" "demo_SNL/A.xlsx"
 
-excelclean , datadir("SNL") sheet("Results") cellrange("A1") pivot namerange("1 3")
+excelclean , datadir("demo_SNL") sheet("Sheet1") cellrange("A2") pivot namerange("1 3") 
               
 di "All Done! The integrated dataset is saved under demo_SNL/clean.dta"			 
 

@@ -113,11 +113,10 @@ program define excelclean
 				
 				tostring *, replace // double check all variables are recorded in string format
 				foreach var of varlist _all {
-					replace `var' = "" if `var' == "n.a."
-					replace `var' = "" if `var' == "."
+					replace `var' = "." if `var' == "n.a."
 					
-					if regexm("`var'","[0-9]+$") {
-						local name = regexr("`var'","[0-9]+$","")   //if variable name contains numbers, delete numbers
+					if regexm("`var'","[0-9]+[a-zA-Z]?$") {
+						local name = regexr("`var'","[0-9]+[a-zA-Z]?$","")   //if variable name contains numbers, delete numbers
 						if strpos("`reshapeVarList'","`name' ") == 0  {
 							local label_`name' : variable label `var'
 							local reshapeVarList "`reshapeVarList' `name' "
@@ -157,7 +156,7 @@ program define excelclean
 	
 	if "`integrate'" != "" {
 		qui destring *, replace 				
-		save "`resultdir'//clean.dta", replace 
+		qui save "`resultdir'//clean.dta", replace 
 	}
 	
 	qui cd ..
