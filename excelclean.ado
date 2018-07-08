@@ -18,6 +18,9 @@ program define excelclean
 	         [RESultdir(string) EXtension(string) namerange(integer 1) namelines(string) ///
 			 Wordfilter(string) Droplist(string) pivot integrate]
 
+			 
+	version 13.1
+	
 	cd "`datadir'"
 	if "`extension'" == "" {
 		local extension xlsx
