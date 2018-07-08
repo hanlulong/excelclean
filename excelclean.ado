@@ -28,10 +28,11 @@ program define excelclean
 	if "`namerange'" == ""  {
 		local namerange "1"
 	}
-
+	
+	
 	local allfiles : dir "." files "*.`extension'"  
 		
-	tempfile building
+	qui tempfile building
 	clear    
 	save `building', emptyok
 	foreach f of local allfiles {
@@ -133,7 +134,6 @@ program define excelclean
 				noi di "ID Vars: `idVarList'"
 				noi di "Reshape Vars: `reshapeVarList'"
 				reshape long `reshapeVarList', i(`idVarList') j(time)
-				destring *, replace 				
 				compress 
 				
 				// Recorver Labels 
@@ -143,7 +143,11 @@ program define excelclean
 			}
 			
 		local file_name = subinstr("`f'",".`extension'",".dta",.)
+		if "`integrate'" == "" {
+			destring *, replace 				
+		}		
 		save "`resultdir'//`file_name'", replace
+		
 		if "`integrate'" != "" {
 			append using `building'
 			save `building', replace
@@ -152,6 +156,7 @@ program define excelclean
 	}
 	
 	if "`integrate'" != "" {
+		destring *, replace 				
 		save "`resultdir'//clean.dta", replace 
 	}
 end

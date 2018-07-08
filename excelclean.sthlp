@@ -24,7 +24,8 @@
 {cmd:excelclean} datadir(string) sheet(string) cellrange(string) [{cmd:,} {it:options}]
 
 {phang2}
-{opt datadir(string)} directory where excel files are stored. 
+{opt datadir(string)} directory where excel files are stored. Please close and save all excel files under this directory before running the command.
+
 {p_end}
 {pmore2} e.g., datadir("c:/myplace/")
 
@@ -68,7 +69,7 @@
 {phang2}
 {opt namerange(string)} specify the rows that record variables names. The default is the first row. 
 {p_end}
-{pmore2} e.g., namerange("1/3") to specify the first three rows as variable names
+{pmore2} e.g., namerange("1 3") to specify the first and the third rows as variable names
 
 {phang2}
 {opt wordfilter(string)} specify specific characters to be excluded from variable names. 
