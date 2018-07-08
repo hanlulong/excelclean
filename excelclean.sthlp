@@ -24,8 +24,7 @@
 {cmd:excelclean} datadir(string) sheet(string) cellrange(string) [{cmd:,} {it:options}]
 
 {phang2}
-{opt datadir(string)} directory where excel files are stored. Please close and save all excel files under this directory before running the command.
-
+{opt datadir(string)} directory where excel files are stored. Please close and save all excel files under this directory before executing the command.
 {p_end}
 {pmore2} e.g., datadir("c:/myplace/")
 
