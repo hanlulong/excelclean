@@ -25,7 +25,7 @@ di "Files of example 1 are saved under demo_bankscope/"
 di `"Command Executed: excelclean , datadir("demo_bankscope") sheet("Results") cellrange("B1")  pivot integrate wordfilter(`"" Quarter""')  droplist("NID TONID")"'
 
 excelclean , datadir("demo_bankscope") sheet("Results") cellrange("B1")  ///
-             pivot integrate wordfilter(`"" Quarter""')  droplist("NID TONID")
+             pivot integrate wordfilter(`"" Quarter""')  droplist("N_ID TON_ID")
 
 di "All Done! The integrated dataset is saved under demo_bankscope/clean.dta"			 
 
