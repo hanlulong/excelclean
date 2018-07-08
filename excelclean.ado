@@ -23,7 +23,7 @@ program define excelclean
 		local extension xlsx
 	}
 	if "`resultdir'" == "" {
-		local resultdir `datadir'
+		local resultdir `c(pwd)'
 	}
 	if "`namerange'" == ""  {
 		local namerange "1"
@@ -32,9 +32,9 @@ program define excelclean
 	
 	local allfiles : dir "." files "*.`extension'"  
 		
-	qui tempfile building
+	tempfile building
 	clear    
-	save `building', emptyok
+	qui save `building', emptyok
 	foreach f of local allfiles {
 		di "Analyzing `f'"
 		qui {
@@ -156,9 +156,12 @@ program define excelclean
 	}
 	
 	if "`integrate'" != "" {
-		destring *, replace 				
+		qui destring *, replace 				
 		save "`resultdir'//clean.dta", replace 
 	}
+	
+	qui cd ..
+
 end
 
 

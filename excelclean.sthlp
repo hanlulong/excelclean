@@ -59,7 +59,7 @@
 {phang2}
 {opt resultdir(string)} specify the directory where the results are saved. The default is the directory "datadir" where the excel files are stored. 
 {p_end}
-{pmore2} e.g., resultdir("C:/myresultdir/")
+{pmore2} e.g., resultdir("C:/myresultdir/"). Always use the {hi:full path} of the directory to aviod possible conflicts.
 
 {phang2}
 {opt extension(string)} specify the extension of files to be included. The deault is "xlsx". 
