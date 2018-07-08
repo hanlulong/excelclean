@@ -15,7 +15,7 @@ capture program drop excelclean
 program define excelclean 
 
 	syntax , Datadir(string) sheet(string) cellrange(string) ///
-	         [RESultdir(string) EXtension(string) namerange(string)  ///
+	         [RESultdir(string) EXtension(string) namerange(integer 1) namelines(string) ///
 			 Wordfilter(string) Droplist(string) pivot integrate]
 
 	cd "`datadir'"
@@ -25,8 +25,8 @@ program define excelclean
 	if "`resultdir'" == "" {
 		local resultdir `c(pwd)'
 	}
-	if "`namerange'" == ""  {
-		local namerange "1"
+	if "`namelines'" == ""  {
+		local namelines "1"
 	}
 	
 	
@@ -45,7 +45,7 @@ program define excelclean
 			foreach var of varlist _all {
 				
 				local label = ""
-				foreach name of local namerange {
+				foreach name of local namelines {
 					local label = "`label'" + `var'[`name']	
 				}
 								
@@ -76,7 +76,9 @@ program define excelclean
 				local n_words : word count `label'           //word must be separated by a space
 				local last_word `: word `n_words' of `label''
 				local newname = subinstr("`label'","`last_word'","",.)  // delete the last word (may contain year) from the label 
-				
+				if regexm("`last_word'","[0-9]$") == 0 {
+					local reshape_opt "string"
+				}
 				// debug 3
 				di "new name `newname'"
 				// get the first letter of each word and formulate variable name 
@@ -88,16 +90,14 @@ program define excelclean
 					local newname2 = "`newname2'" + "`name'"
 				}
 				
-				local newname2 = "`newname2'"  + "`last_word'"			
+				local newname2 = "`newname2'"  + "_`last_word'"			
 
 				di "`newname2'"
 				rename `var' `newname2'
 				label var `newname2' "`newname'"
 			}
 			
-			foreach name of local namerange {
-				drop if _n == `name'
-			}	
+			drop if _n <= `namerange'
 
 			foreach var of varlist _all {
 				if strpos("`droplist'","`var' ") != 0  {
@@ -132,7 +132,7 @@ program define excelclean
 			
 				noi di "ID Vars: `idVarList'"
 				noi di "Reshape Vars: `reshapeVarList'"
-				reshape long `reshapeVarList', i(`idVarList') j(time)
+				reshape long `reshapeVarList', i(`idVarList') j(time) `reshape_opt'
 				compress 
 				
 				// Recorver Labels 
@@ -141,6 +141,11 @@ program define excelclean
 				}
 			}
 			
+		foreach var of varlist _all {
+			local refinedname = subinstr("`var'","_","",.)
+			rename `var' `refinedname'
+		}		
+		
 		local file_name = subinstr("`f'",".`extension'",".dta",.)
 		if "`integrate'" == "" {
 			destring *, replace 				
@@ -162,6 +167,11 @@ program define excelclean
 	qui cd ..
 
 end
+
+
+
+
+
 
 
 

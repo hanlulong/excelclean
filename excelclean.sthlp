@@ -67,9 +67,14 @@
 {pmore2} e.g., extension("xls")
 
 {phang2}
-{opt namerange(string)} specify the rows that record variables names. The default is the first row. 
+{opt namerange(integer)} specify the rows that record variables names. The default is the first row. 
 {p_end}
-{pmore2} e.g., namerange("1 3") to specify the first and the third rows as variable names
+{pmore2} e.g., namelines(4) to indicate that the first four rows contain information about variable names. Note that the first four lines will be deleted from the dataset after creating the variable names.
+
+{phang2}
+{opt namelines(string)} select the rows to formulate variables names. The default is the first row. 
+{p_end}
+{pmore2} e.g., namelines("1 3") to specify the first and the third rows to be used to formulate variable names
 
 {phang2}
 {opt wordfilter(string)} specify specific characters to be excluded from variable names. 
