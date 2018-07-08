@@ -1,5 +1,5 @@
 # excelclean
-A Stata program that efficiently cleans and integrates excel files into Stata dta format
+A Stata module that efficiently cleans and integrates excel files into Stata dta format
 
 
 ## Features
