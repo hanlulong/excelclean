@@ -1,0 +1,5 @@
+d 'excelclean': clean and integrate excel files  
+d Lu Han, University of Cambridge
+p excelclean
+f excelclean.ado
+f excelclean.sthlp
