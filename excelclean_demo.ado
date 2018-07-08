@@ -27,7 +27,7 @@ di " "
 di " "
 di as result  "Command Executed:" 
 di as result `"excelclean , datadir("demo_bankscope") sheet("Results") cellrange("B1")  "'
-di as result `"             pivot integrate wordfilter(`"" Quarter""')  droplist("NID TONID")"'
+di as result `"             pivot integrate wordfilter(`"" Quarter""')  droplist("N_ID TON_ID")"'
 di " "
 di " "
 di " "
@@ -37,6 +37,9 @@ qui excelclean , datadir("demo_bankscope") sheet("Results") cellrange("B1")  ///
 
 di as result "All Done! The integrated dataset is saved under demo_bankscope/clean.dta"			 
 
+di " "
+di " "
+di " "
 			 
 di "Example 2: Oragnising downloaded excel files from SNL"
 
@@ -52,7 +55,7 @@ di " "
 di " "
 di as result `"Command Executed:"
 di as result `"excelclean , datadir("demo_SNL") sheet("Sheet1") "'
-di as result `"             cellrange("A2") pivot namerange("1 3") namerange(4) namelines("1 3") "'
+di as result `"             cellrange("A2") pivot namerange(4) namelines("1 3") "'
 di " "
 di " "
 di " "
