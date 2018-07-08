@@ -4,10 +4,10 @@ A Stata program that efficiently cleans and integrates excel files into Stata dt
 
 ## Features
 
-* loads all excel files in a specified directory
-* organizes variable names and labels
-* reshapes the dataset if necessary
-* integrates all files into a cleaned dataset. 
+* load all excel files in the specified directory
+* recode variable names and labels
+* reshape the dataset if necessary
+* integrate all files into a cleaned dataset. 
 
 
 ## Usage 
