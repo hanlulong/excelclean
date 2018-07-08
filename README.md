@@ -10,9 +10,7 @@ A Stata program that efficiently cleans and integrates excel files into Stata dt
 ## Usage 
 0. Installation 
 
-          ```
           net install excelclean, from("https://github.com/hanlulong/excelclean/raw/master")
-          ```
 
 1. Put all excel files of similar kinds into the same directory 
 
