@@ -4,10 +4,10 @@ A Stata program that efficiently cleans and integrates excel files into Stata dt
 
 ## Features
 
-- loads all excel files in a specified directory
-- organizes variable names and labels
-- reshapes the dataset if necessary
-- integrates all files into a cleaned dataset. 
+* loads all excel files in a specified directory
+* organizes variable names and labels
+* reshapes the dataset if necessary
+* integrates all files into a cleaned dataset. 
 
 
 ## Usage 
@@ -17,7 +17,9 @@ A Stata program that efficiently cleans and integrates excel files into Stata dt
 
 1. Put all excel files of similar kinds into the same directory 
 
-2. Run the following command 
+2. Run 
+          
+          excelclean datadir(string) sheet(string) cellrange(string) [, options]
 
  
 ## Syntax
