@@ -1,22 +1,3 @@
-# excelclean
-A Stata program that efficiently cleans and integrates excel files into Stata dta format
-
-
-## Features
-
-- 
-
-
-## Usage 
-0. Installation 
-
-1. Put all excel files of similar kinds into the same directory 
-
-2. Run the following command 
-
-
-Options
-
           Title
 
               excelclean -- clean and integrate excel files
@@ -77,3 +58,12 @@ Options
                       e.g., wordfilter("year quarter the"); to exclude the space before any word use
                       wordfilter(`"" word1" " word2""')
 
+
+
+          Author
+
+              Lu Han
+
+              Faculty of Economics, Universtiy of Cambridge
+
+              Please report issues on Github https://github.com/hanlulong/excelclean
