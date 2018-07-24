@@ -6,7 +6,7 @@ organizes variable names and labels, reshapes the dataset if necessary,
 and integrates all files into a cleaned dataset
 
 Author: Lu Han 
-Last update: 08 Jul 2018
+Last update: 24 Jul 2018
 
 *******************************************************************************/
 
@@ -120,7 +120,7 @@ program define excelclean
 					
 					if regexm("`var'","[0-9]+[a-zA-Z]?$") {
 						local name = regexr("`var'","[0-9]+[a-zA-Z]?$","")   //if variable name contains numbers, delete numbers
-						if strpos("`reshapeVarList'","`name' ") == 0  {
+						if strpos("`reshapeVarList'"," `name' ") == 0  {
 							local label_`name' : variable label `var'
 							local reshapeVarList "`reshapeVarList' `name' "
 						}
