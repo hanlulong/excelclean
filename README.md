@@ -1,5 +1,5 @@
 # excelclean
-A Stata module that extends the defualt `import excel` command and adds support on batch processing of excel files. 
+A Stata module that extends the default `import excel` command and adds support on batch processing of excel files. 
 
 ## Features
 
@@ -8,7 +8,7 @@ A Stata module that extends the defualt `import excel` command and adds support 
 * reshape the dataset if necessary
 * integrate all files into a cleaned dataset. 
 
-The major improvement is on handling variable names and automating label generations. The module can manage most name excpetions in batch processing, including long variable names, multiline names, line breaks, special characters, etc. It generates variables names that can easily work with the `reshape` command and provdes `pivot` and `integrate` options to automate the entire process. 
+The major improvement is on handling variable names and automating label generations. The module can manage most name exceptions in batch processing, including long variable names, multiline names, line breaks, special characters, etc. It generates variable names that can easily work with the `reshape` command and provides `pivot` and `integrate` options to automate the entire process. 
 
 ## Usage 
 0. Installation 
