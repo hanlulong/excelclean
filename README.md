@@ -8,7 +8,7 @@ A Stata module that extends the defualt `import excel` command adding support on
 * reshape the dataset if necessary
 * integrate all files into a cleaned dataset. 
 
-The major improvement is on the handling of variable names and automating label generations. This module handle most common naming errors in batch importing excel data files including long variable names, multiline variable names, breaklines, special characters, etc. It generates variables names that can be easily work with the `reshape` command and provdes `pivot` and `integrate` options to automate the entire process. 
+The major improvement is on the handling variable names and automating label generations. The model can manage most name excpetions in batch importing excels. It generates variables names that can be easily work with the `reshape` command and provdes `pivot` and `integrate` options to automate the entire process. 
 
 ## Usage 
 0. Installation 
