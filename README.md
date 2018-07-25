@@ -70,7 +70,7 @@ After installing the package, run
             Always use the full path of the directory to aviod possible conflicts.
 
         extension(string) 
-            specify the extension of files to be included. The deault is "xlsx".
+            specify the extension of files to be included. The default is "xlsx".
             e.g., extension("xls")
 
         namerange(integer) 
