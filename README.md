@@ -1,5 +1,5 @@
 # excelclean
-A Stata module that extends the defualt `import excel` command adding support on batch processing of excel files. 
+A Stata module that extends the defualt `import excel` command and adds support on batch processing of excel files. 
 
 ## Features
 
