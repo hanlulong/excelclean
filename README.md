@@ -19,7 +19,7 @@ The major improvement is on handling variable names and automating label generat
 
 2. Run 
           
-          excelclean datadir(string) sheet(string) cellrange(string) [, options]
+          excelclean, datadir(string) sheet(string) cellrange(string) [options]
 
 ### Example Usage 
 After installing the package, run
@@ -29,7 +29,7 @@ After installing the package, run
 
 ## Syntax
 
-    excelclean datadir(string) sheet(string) cellrange(string) [, options]
+    excelclean, datadir(string) sheet(string) cellrange(string) [options]
 
         datadir(string) 
             directory where excel files are stored. Please close and save all excel files 
